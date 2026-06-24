@@ -23,7 +23,7 @@ a{color:#5b82ff}.lk{display:block;text-align:center;margin-top:22px;font-size:13
 <a class="lk" href="./highlights.html">← обложки хайлайтов</a>
 <div id="lb" onclick="this.classList.remove('on')"><img id="li"></div>
 <script>
-const V='?v=20260624st1';
+const V='?v=20260624st2';
 function fill(id,files){const r=document.getElementById(id);files.forEach(f=>{const p='stories/'+f+'.png'+V;const im=new Image();im.src=p;im.onclick=()=>{document.getElementById('li').src=p;document.getElementById('lb').classList.add('on')};r.appendChild(im);});}
 fill('about',['about-1','about-2','about-3']);
 fill('system',['system-1','system-2','system-3']);
