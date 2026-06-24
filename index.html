@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Карусели @mr.brezgin — превью</title>
+<style>
+  :root{--bg:#05060a;--ink:#f4f5fb;--muted:#8b90a6;--line:rgba(255,255,255,.08)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,Inter,system-ui,sans-serif;
+    padding:24px 16px 64px;-webkit-tap-highlight-color:transparent}
+  header{max-width:760px;margin:8px auto 28px;text-align:center}
+  h1{font-size:24px;font-weight:800;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:14px;margin-top:8px;line-height:1.5}
+  .deck{max-width:760px;margin:0 auto 40px}
+  .deck h2{font-size:18px;font-weight:700;margin:0 4px 4px}
+  .deck .tag{color:var(--muted);font-size:13px;margin:0 4px 14px}
+  .row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:4px 4px 14px;-webkit-overflow-scrolling:touch}
+  .row::-webkit-scrollbar{height:6px}
+  .row::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+  .row img{width:78%;max-width:340px;flex:none;scroll-snap-align:center;
+    border-radius:18px;border:1px solid var(--line);box-shadow:0 12px 40px rgba(0,0,0,.5);cursor:pointer}
+  .hint{color:var(--muted);font-size:12px;margin:2px 4px 0}
+  footer{max-width:760px;margin:30px auto 0;color:var(--muted);font-size:12px;text-align:center;line-height:1.6}
+  /* lightbox */
+  #lb{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;
+    justify-content:center;z-index:50;padding:16px}
+  #lb img{max-width:100%;max-height:100%;border-radius:14px}
+  #lb.on{display:flex}
+</style>
+</head>
+<body>
+<header>
+  <h1>Карусели для @mr.brezgin</h1>
+  <div class="sub">3 деки под воронку ChatPlace · листай вбок, тапни для увеличения</div>
+</header>
+
+<div id="decks"></div>
+
+<footer>Превью для согласования дизайна. Финальные PNG 1080×1350 готовы к загрузке в Instagram.</footer>
+
+<div id="lb" onclick="this.classList.remove('on')"><img id="lbimg" alt=""></div>
+
+<script>
+const decks=[
+  {t:'Карусель A — «3 процесса, которые AI забрал»', g:'Универсал · FOMO', dir:'carousel-A', n:8},
+  {t:'Карусель C — «Первый шаг за 60 секунд»', g:'Для новичков', dir:'carousel-C', n:7},
+  {t:'Карусель B — «Почему ChatGPT выдаёт воду»', g:'Пробовал и бросил', dir:'carousel-B', n:7},
+];
+const root=document.getElementById('decks');
+const lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg');
+decks.forEach(d=>{
+  const sec=document.createElement('section');sec.className='deck';
+  let imgs='';
+  for(let i=1;i<=d.n;i++){const p=`png/${d.dir}/${String(i).padStart(2,'0')}.png`;
+    imgs+=`<img loading="lazy" src="${p}" onclick="open_('${p}')">`;}
+  sec.innerHTML=`<h2>${d.t}</h2><div class="tag">${d.g} · ${d.n} слайдов</div><div class="row">${imgs}</div>`;
+  root.appendChild(sec);
+});
+function open_(p){lbimg.src=p;lb.classList.add('on')}
+</script>
+</body>
+</html>
