@@ -1,6 +1,6 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Карусель — AI для делегирования</title>
+<title>Карусель — Почему AI не работает (анти-хайп)</title>
 <style>
 body{background:#05060a;color:#f4f5fb;font-family:-apple-system,Inter,sans-serif;margin:0;padding:22px 14px 60px}
 h1{font-size:20px;font-weight:700;text-align:center;margin:6px 0 2px}
@@ -11,13 +11,13 @@ img{width:80%;max-width:340px;flex:none;scroll-snap-align:center;border-radius:1
 a{color:#5b82ff}.lk{display:block;text-align:center;margin-top:18px;font-size:13px}
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;z-index:50;padding:14px}#lb.on{display:flex}#lb img{max-width:100%;max-height:100%}
 </style></head><body>
-<h1>Карусель №1 — «AI для делегирования»</h1>
-<div class="sub">Стиль В1 (графит + синий), тонкий шрифт, с твоими фото · провал #1 · 7 слайдов<br>листай вбок · тапни для увеличения</div>
+<h1>Карусель №2 — «Почему AI у большинства не работает»</h1>
+<div class="sub">Стиль В1 (графит + синий), тонкий шрифт, с твоими фото · провал #3 · анти-хайп · 7 слайдов<br>листай вбок · тапни для увеличения</div>
 <div class="row" id="r"></div>
-<a class="lk" href="./antihype.html">карусель №2 «Почему AI не работает» →</a>
+<a class="lk" href="./delegation.html">← карусель №1 «AI для делегирования»</a>
 <div id="lb" onclick="this.classList.remove('on')"><img id="li"></div>
 <script>
 const r=document.getElementById('r');
-const V='?v=20260624d';
-for(let i=1;i<=7;i++){const p='delegation/'+String(i).padStart(2,'0')+'.png'+V;const im=new Image();im.src=p;im.onclick=()=>{document.getElementById('li').src=p;document.getElementById('lb').classList.add('on')};r.appendChild(im);}
+const V='?v=20260624a2';
+for(let i=1;i<=7;i++){const p='antihype/'+String(i).padStart(2,'0')+'.png'+V;const im=new Image();im.src=p;im.onclick=()=>{document.getElementById('li').src=p;document.getElementById('lb').classList.add('on')};r.appendChild(im);}
 </script></body></html>
