@@ -1,0 +1,22 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Карусель — AI для делегирования</title>
+<style>
+body{background:#05060a;color:#f4f5fb;font-family:-apple-system,Inter,sans-serif;margin:0;padding:22px 14px 60px}
+h1{font-size:20px;font-weight:700;text-align:center;margin:6px 0 2px}
+.sub{color:#8b90a6;font-size:13px;text-align:center;margin-bottom:20px;line-height:1.5}
+.row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;-webkit-overflow-scrolling:touch;max-width:760px;margin:0 auto}
+.row::-webkit-scrollbar{height:6px}.row::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:4px}
+img{width:80%;max-width:340px;flex:none;scroll-snap-align:center;border-radius:16px;border:1px solid rgba(255,255,255,.08);box-shadow:0 12px 40px rgba(0,0,0,.5);cursor:pointer}
+a{color:#5b82ff}.lk{display:block;text-align:center;margin-top:18px;font-size:13px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;z-index:50;padding:14px}#lb.on{display:flex}#lb img{max-width:100%;max-height:100%}
+</style></head><body>
+<h1>Карусель №1 — «AI для делегирования»</h1>
+<div class="sub">Стиль В1 (графит + синий), тонкий шрифт, с твоими фото · провал #1 · 7 слайдов<br>листай вбок · тапни для увеличения</div>
+<div class="row" id="r"></div>
+<a class="lk" href="./">← к остальным каруселям</a>
+<div id="lb" onclick="this.classList.remove('on')"><img id="li"></div>
+<script>
+const r=document.getElementById('r');
+for(let i=1;i<=7;i++){const p='delegation/'+String(i).padStart(2,'0')+'.png';const im=new Image();im.src=p;im.loading='lazy';im.onclick=()=>{document.getElementById('li').src=p;document.getElementById('lb').classList.add('on')};r.appendChild(im);}
+</script></body></html>
