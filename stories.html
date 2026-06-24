@@ -1,0 +1,30 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stories для хайлайтов @mr.brezgin</title>
+<style>
+body{background:#05060a;color:#f4f5fb;font-family:-apple-system,Inter,sans-serif;margin:0;padding:22px 14px 60px}
+h1{font-size:20px;font-weight:700;text-align:center;margin:6px 0 2px}
+.sub{color:#8b90a6;font-size:13px;text-align:center;margin-bottom:24px;line-height:1.5}
+h2{font-size:15px;color:#aeb4c4;text-align:center;font-weight:600;margin:30px 0 14px;letter-spacing:.04em}
+.row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;max-width:820px;margin:0 auto}
+.row img{width:60%;max-width:230px;flex:none;scroll-snap-align:center;border-radius:18px;border:1px solid rgba(255,255,255,.08);box-shadow:0 12px 40px rgba(0,0,0,.5);cursor:pointer}
+a{color:#5b82ff}.lk{display:block;text-align:center;margin-top:22px;font-size:13px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;z-index:50;padding:14px}#lb.on{display:flex}#lb img{max-width:100%;max-height:100%}
+</style></head><body>
+<h1>Stories для хайлайтов — стиль В1</h1>
+<div class="sub">2 набора по 3 слайда (1080×1920) · загружаешь как Stories → добавляешь в нужный хайлайт<br>листай вбок · тапни для увеличения</div>
+
+<h2>Хайлайт «ОБО МНЕ» — 3 слайда</h2>
+<div class="row" id="about"></div>
+
+<h2>Хайлайт «AI-СИСТЕМА» — 3 слайда</h2>
+<div class="row" id="system"></div>
+
+<a class="lk" href="./highlights.html">← обложки хайлайтов</a>
+<div id="lb" onclick="this.classList.remove('on')"><img id="li"></div>
+<script>
+const V='?v=20260624st1';
+function fill(id,files){const r=document.getElementById(id);files.forEach(f=>{const p='stories/'+f+'.png'+V;const im=new Image();im.src=p;im.onclick=()=>{document.getElementById('li').src=p;document.getElementById('lb').classList.add('on')};r.appendChild(im);});}
+fill('about',['about-1','about-2','about-3']);
+fill('system',['system-1','system-2','system-3']);
+</script></body></html>
