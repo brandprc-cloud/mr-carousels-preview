@@ -1,0 +1,22 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Карусель №5 — анимированная проба</title>
+<style>
+body{background:#05060a;color:#f4f5fb;font-family:-apple-system,Inter,sans-serif;margin:0;padding:22px 14px 60px}
+h1{font-size:20px;font-weight:700;text-align:center;margin:6px 0 2px}
+.sub{color:#8b90a6;font-size:13px;text-align:center;margin-bottom:20px;line-height:1.5}
+.row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;-webkit-overflow-scrolling:touch;max-width:760px;margin:0 auto}
+.row::-webkit-scrollbar{height:6px}.row::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:4px}
+video{width:80%;max-width:340px;flex:none;scroll-snap-align:center;border-radius:16px;border:1px solid rgba(255,255,255,.08);box-shadow:0 12px 40px rgba(0,0,0,.5);background:#0e1116}
+a{color:#5b82ff}.lk{display:block;text-align:center;margin-top:18px;font-size:13px}
+</style></head><body>
+<h1>Карусель №5 «5 рутинных задач» — анимированная проба</h1>
+<div class="sub">Стиль В1, на «вы», номера без нуля · 7 видео-слайдов 1080×1350, как их получит Instagram<br>движение проигрывается один раз, потом слайд стоит 15 секунд · листай вбок</div>
+<div class="row" id="r"></div>
+<a class="lk" href="./tasks5.html">статичная версия этой карусели (21.07) →</a>
+<script>
+const r=document.getElementById('r');const V='?v=20261002a';
+for(let i=1;i<=7;i++){const n=String(i).padStart(2,'0');const v=document.createElement('video');
+v.src='tasks5-anim/5-rutinnyh-zadach-'+n+'.mp4'+V;v.poster='tasks5-anim/poster-'+n+'.jpg'+V;
+v.muted=true;v.loop=true;v.playsInline=true;v.autoplay=true;v.preload='metadata';v.controls=true;r.appendChild(v);}
+</script></body></html>
