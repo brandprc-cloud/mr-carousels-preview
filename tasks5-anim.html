@@ -11,12 +11,12 @@ video{width:80%;max-width:340px;flex:none;scroll-snap-align:center;border-radius
 a{color:#5b82ff}.lk{display:block;text-align:center;margin-top:18px;font-size:13px}
 </style></head><body>
 <h1>Карусель №5 «5 рутинных задач» — анимированная проба</h1>
-<div class="sub">Стиль В1, на «вы», номера без нуля · 7 видео-слайдов 1080×1350, как их получит Instagram<br>движение проигрывается один раз, потом слайд стоит 15 секунд · листай вбок</div>
+<div class="sub">Стиль В1, на «вы», номера 1, 2, 3 без нуля (и на слайдах, и в углу) · 7 видео-слайдов 1080×1350, как их получит Instagram<br>движение проигрывается один раз, потом слайд стоит 15 секунд · листай вбок</div>
 <div class="row" id="r"></div>
 <a class="lk" href="./tasks5.html">статичная версия этой карусели (21.07) →</a>
 <script>
-const r=document.getElementById('r');const V='?v=20261002a';
+const r=document.getElementById('r');const V='?v=20261002b';
 for(let i=1;i<=7;i++){const n=String(i).padStart(2,'0');const v=document.createElement('video');
-v.src='tasks5-anim/5-rutinnyh-zadach-'+n+'.mp4'+V;v.poster='tasks5-anim/poster-'+n+'.jpg'+V;
+v.src='tasks5-anim/v2/5-rutinnyh-zadach-'+n+'.mp4'+V;v.poster='tasks5-anim/v2/poster-'+n+'.jpg'+V;
 v.muted=true;v.loop=true;v.playsInline=true;v.autoplay=true;v.preload='metadata';v.controls=true;r.appendChild(v);}
 </script></body></html>

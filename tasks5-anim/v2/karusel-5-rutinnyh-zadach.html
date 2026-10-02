@@ -864,7 +864,7 @@ function slideHTML(s, idx, total){
   }
   const brandFoot = document.body.dataset.foot || '';
   const foot = (typ==='cover'||typ==='cta'||s.nofoot) ? '' :
-    `<div class="foot"><span>${esc(brandFoot)}</span><span>${String(idx).padStart(2,'0')}</span></div>`;
+    `<div class="foot"><span>${esc(brandFoot)}</span><span>${String(idx)}</span></div>`;
   const h = s.h_size ? ` ${s.h_size}` : '';
   let inner = '';
   if (typ==='cover'){
@@ -910,7 +910,7 @@ function slideHTML(s, idx, total){
     inner += `<p class="truth-label">${esc(s.truth_label||'На самом деле')}</p><p class="truth-text">${fmt(s.truth)}</p>`;
   } else if (typ==='numlist'){
     inner = `<h2 class="hl h1${h}">${fmt(s.title)}</h2><div class="numlist">`+
-      s.items.map((it,i)=>`<div class="row"><span class="n">${String(i+1).padStart(2,'0')}</span><span class="t">${fmt(it)}</span></div>`).join('')+`</div>`;
+      s.items.map((it,i)=>`<div class="row"><span class="n">${String(i+1)}</span><span class="t">${fmt(it)}</span></div>`).join('')+`</div>`;
   } else if (typ==='checklist'){
     inner = `<h2 class="hl h1${h}">${fmt(s.title)}</h2><div class="check">`+
       s.items.map(it=>{const o=typeof it==='string'?{t:it}:it;
@@ -951,7 +951,7 @@ function slideHTML(s, idx, total){
         (it.who?`<p class="who">${typo(esc(it.who))}</p>`:'')+`</div>`).join('');
   } else if (typ==='recap'){
     inner = `<h2 class="hl h1${h||' h1-sm'}">${fmt(s.title||'Коротко')}</h2><div class="recap">`+
-      s.items.map((it,i)=>`<div class="row"><span class="n">${String(i+1).padStart(2,'0')}</span><span class="t">${fmt(it)}</span></div>`).join('')+`</div>`;
+      s.items.map((it,i)=>`<div class="row"><span class="n">${String(i+1)}</span><span class="t">${fmt(it)}</span></div>`).join('')+`</div>`;
   } else if (typ==='prompt'){
     inner = `<h2 class="hl h1${h||' h1-sm'}">${fmt(s.title)}</h2>`;
     if (s.note) inner += `<p class="prompt-note">${typo(esc(s.note))}</p>`;
